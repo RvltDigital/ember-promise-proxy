@@ -1,0 +1,22 @@
+<div class="post">
+    <div class="post__text">
+        {{ @model.text }}
+    </div>
+    <div class="post__footer">
+
+        <div class="post__time">
+            {{ this.time }}
+        </div>
+
+        <div class="post__last-comment-author">
+            {{#if this.lastCommentAuthor.isFulfilled}}
+                {{#if this.lastCommentAuthor.content}}
+                    Last comment by {{ this.lastCommentAuthor.name }}
+                {{else}}
+                    <i>Never has been commented.</i>
+                {{/if}}
+            {{/if}}
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="last-post">
+
+    <div class="last-post__text">
+        {{ @model.text }}
+    </div>
+
+    <div class="last-post__comments-info">
+        {{ this.commentsInfo.content }}
+    </div>
+
+    <div class="last-post__comment-list">
+        <div><b>Comments</b></div>
+        <ul>
+            {{#each @model.sortedComments key="id" as |comment|}}
+                <li class="last-post__comment">
+                    <div class="last-post__comment-text">
+                        {{ comment.text }}
+                    </div>
+                    <div class="last-post__comment-author">
+                        by {{ comment.author.name }}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>

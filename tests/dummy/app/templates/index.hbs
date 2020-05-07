@@ -1,0 +1,12 @@
+<div class="content">
+    <div class="content__last-actual-post">
+        <h2>Your last post</h2>
+        <LastPost @model={{ this.model.lastPost }} />
+    </div>
+    <div class="content__all-posts">
+        <h2>Your other posts</h2>
+        {{#each this.model.sortedPosts key="id" as |post|}}
+            <Post @model={{ post }} />
+        {{/each}}
+    </div>
+</div>
